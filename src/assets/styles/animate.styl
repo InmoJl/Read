@@ -1,0 +1,123 @@
+
+// 上滑
+.slide-up-enter-active,
+.slide-up-leave-active
+	will-change transform, display
+	transition all .4s
+		
+.slide-up-enter,
+.slide-up-leave-to
+	transform translateY(100%)
+	opacity 0
+	
+// 下滑
+.slide-down-enter-active,
+.slide-down-leave-active
+	transition all .4s
+		
+.slide-down-enter,
+.slide-down-leave-to
+	transform translateY(-100%)
+	opacity 0
+	
+// 左滑出
+.slide-left-enter-active,
+.slide-left-leave-active
+	transition all .4s
+
+.slide-left-enter,
+.slide-left-leave-to
+	transform translateX(-100%)
+	
+// 内嵌
+.slide-left-enter-active .fade,
+.slide-left-leave-active .fade
+	transition all .4s
+	
+.slide-left-enter .fade,
+.slide-left-leave-to .fade
+	opacity 0
+	
+// 切换到搜索的动画
+.fade-store-enter-active,
+.fade-store-leave-active
+	transition all .4s
+	
+.fade-store-enter,
+.fade-store-leave-to
+	opacity 0
+	transform translateY(3rem)
+	
+// 冰激凌动画
+@keyframes ice
+	100%
+		transform rotate(-30deg) translate3d(-5.6rem, -25%, 0)
+	
+
+// 页面切换
+.page-go-enter-active,
+.page-go-leave-active,
+.page-back-enter-active,
+.page-back-leave-active
+	position absolute !important
+	top 0
+	left 0
+	will-change transform
+	transition all .2s ease-out
+
+.page-go-enter
+	transform translateX(100%)
+.page-go-leave-to
+	transform translateX(-100%)
+	
+.page-back-enter
+	transform translateX(-100%)
+.page-back-leave-to
+	transform translateX(100%)
+	
+// 渐入渐出
+.fade-enter-active,
+.fade-leave-active
+	transition opacity .4s
+	
+.fade-enter,
+.fade-leave-to
+	opacity 0
+
+.fade-leave,
+.fade-enter-to
+	opacity 1
+	
+// popup 动画
+.popup-slide-up-enter-active,
+.popup-slide-up-leave-active
+	transition all .4s
+
+.popup-slide-up-enter,
+.popup-slide-up-leave-to
+	transform translate3d(0, 100%, 0)
+	opacity 0
+
+.popup-slide-up-enter-to,
+.popup-slide-up-leave
+	transform translate3d(0, 0, 0)
+	opacity 1
+	
+// 点击扩散效果
+@keyframes blister
+	0%
+		width 0
+		height 0
+		opacity .5
+	100%
+		width 200vw
+		height 200vw
+		opacity 0
+		
+
+// 书架书本移动动画
+.list-leave-active
+	display none
+
+.list-move
+	transition transform .5s

@@ -1,0 +1,7 @@
+export const SET_SCROLLY						= 'set_scrollY'
+export const SET_SEARCHPAGEVISIBLE	= 'set_searchPageVisible'
+export const SET_TITLEBARVISIBLE		= 'set_titleBarVisible'
+export const SET_FLAPCARDVISIBLE		= 'set_flapCardVisible'
+export const SET_RECOMMENDBOOKS			= 'set_recommendBooks'
+export const SET_ISRANDOMBOOK				= 'set_isRandomBook'
+export const SET_BOOKS							= 'set_books'
