@@ -5,6 +5,7 @@
 		<detail-copyright :data="info" />
 		<detail-navigation :data="navList" />
 		<detail-function />
+		<detail-listen :data="info" />
 	</div>
 </template>
 
@@ -15,6 +16,7 @@
 	import DetailCopyright from '@/components/Detail/DetailCopyright'
 	import DetailNavigation from '@/components/Detail/DetailNavigation'
 	import DetailFunction from '@/components/Detail/DetailFunction'
+	import DetailListen from '@/components/Detail/DetailListen'
 	
 	import Epub from 'epubjs'
 	
@@ -37,7 +39,8 @@
 			DetailInfo,
 			DetailCopyright,
 			DetailNavigation,
-			DetailFunction
+			DetailFunction,
+			DetailListen
 		},
 		created() {
 			detail({

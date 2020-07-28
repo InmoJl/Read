@@ -182,3 +182,16 @@ export const cacheCompMixin = {
 	}
 }
 
+export const detailMixin = {
+	computed: {
+		...mapGetters([
+			'listenVisible'
+		])
+	},
+	methods: {
+		...mapActions([
+			'setListenVisible'
+		])
+	}
+}
+
