@@ -11,7 +11,7 @@
 
 <script>
 	
-	import EbookReader 	from '@/components/Ebook'
+	import EbookReader 	from '@/components/Ebook/EbookReader'
 	import EbookTitle		from '@/components/Ebook/EbookTitle'
 	import EbookMenu		from '@/components/Ebook/EbookMenu'
 	import EbookBookmark from '@/components/Ebook/EbookBookmark'

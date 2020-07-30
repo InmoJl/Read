@@ -75,7 +75,6 @@
 						q: findBookName
 					}
 				})
-				
 			}
 		}
 	}

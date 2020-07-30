@@ -35,7 +35,7 @@
 
 <style lang="stylus">
 
-	@import '//at.alicdn.com/t/font_1808340_fbmobn1rnvs.css';
+	@import '//at.alicdn.com/t/font_1808340_e0wlm9stfbe.css';
 	@import '~@/assets/styles/global.styl';
 	@import '~@/assets/styles/animate.styl';
 

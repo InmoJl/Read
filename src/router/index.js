@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router';
 
 const Ebook = () => import('../views/Ebook')
-const EbookView = () => import('../components/Ebook')
+const EbookView = () => import('../components/Ebook/EbookReader')
 const Store = () => import('../views/Store')
 const Detail = () => import('../views/Detail')
 const BookList = () => import('../views/BookList')

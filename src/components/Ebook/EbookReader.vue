@@ -50,9 +50,9 @@
 		},
 		methods: {
 			onMove(e) {
-				const y = e.changedTouches[0].clientY
-				
 				if (this.menuVisible && this.bookAvailable) return
+				
+				const y = e.changedTouches[0].clientY
 				
 				if (this.startPosY)
 					this.setOffsetY(parseInt((y - this.startPosY) / 4))

@@ -58,25 +58,31 @@ export const ebookMixin = {
 			'setBookmarksItem',
 			'setIsBookmark'
 		]),
-		refreshLocation() {
+		// 刷新位置
+		async refreshLocation() {
+			
+			// 获取现在章节开始位置
 			const startLocation = this.currentBook.rendition.currentLocation().start
+			console.log('update location', startLocation);
 			if (startLocation) {
+				// 获取这个位置的cfi
 				const cfi = startLocation.cfi
+				// 根据这个百分比获取当前位置在全书中的位置
 				const progress = this.currentBook.locations.percentageFromCfi(cfi)
-				this.setProgress(Math.floor(progress * 100))
+				
+				console.log('update progress', progress);
+				
+				await this.setProgress(Math.floor(progress * 100))
 				this.setSection(startLocation.index)
 				saveLocation(this.fileName, cfi)
 			}
 
 			const isFind = this.bookmarks.find(item => item.cfi === startLocation.cfi)
-			if (isFind)
-				this.setIsBookmark(true)
-			else
-				this.setIsBookmark(false)
+			isFind ? this.setIsBookmark(true) : this.setIsBookmark(false)
 		},
-		display(target, fn) {
-			if (target)
-				this.currentBook.rendition.display(target).then(this.refreshLocation).then(() => fn && fn())
+		display(href, fn) {
+			if (href)
+				this.currentBook.rendition.display(href).then(this.refreshLocation).then(() => fn && fn())
 			else
 				this.currentBook.rendition.display().then(this.refreshLocation).then(() => fn && fn())
 		},
@@ -185,12 +191,14 @@ export const cacheCompMixin = {
 export const detailMixin = {
 	computed: {
 		...mapGetters([
-			'listenVisible'
+			'listenVisible',
+			'catelogVisible'
 		])
 	},
 	methods: {
 		...mapActions([
-			'setListenVisible'
+			'setListenVisible',
+			'setCatelogVisible'
 		])
 	}
 }

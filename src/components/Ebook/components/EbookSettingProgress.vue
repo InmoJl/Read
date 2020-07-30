@@ -9,7 +9,6 @@
 				</span>
 				<input class="esp-progress"
 					type="range"
-					value=""
 					max="100"
 					min="0"
 					step="1"
@@ -47,9 +46,11 @@
 				const cfi = this.currentBook.locations.cfiFromPercentage(this.progress / 100)
 				this.display(cfi)
 			},
+			// 值发生变化的时候调用
 			onProgressChange(value) {
 				this.setProgress(value).then(this.displayProgress)
 			},
+			// 元素失去焦点的时候触发
 			onProgressInput(value) {
 				this.setProgress(value).then(this.updateProgressBackground)
 			},
@@ -57,14 +58,15 @@
 				this.$refs.progress.style.backgroundSize = `${this.progress}% 100%`
 			},
 			displaySection() {
-				const sectionInfo = this.currentBook.section(this.section)
-				
-				if (sectionInfo && sectionInfo.href)
-					this.display(sectionInfo.href)
+				const section = this.currentBook.section(this.section)
+
+				if (section && section.href)
+					this.display(section.href)
 			},
 			prevSection() {
-				if (this.section > 0 && this.bookAvailable)
+				if (this.section > 0 && this.bookAvailable) {
 					this.setSection(this.section - 1).then(this.displaySection)
+				}
 			},
 			nextSection() {
 				if (this.section < this.spineLength && this.bookAvailable)
